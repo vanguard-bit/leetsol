@@ -8,13 +8,16 @@ import shelve
 
 
 def runall():
+    """
+    Quires all questions for the tags in this_month_tags file
+    """
     tags = this_month_tags.tags
     index = 0
     if not (os.path.isfile("shelf\\tags.dat"
                            ) and os.path.isfile("shelf\\tags.bak"
                                                 ) and os.path.isfile("shelf\\tags.dir")):
         shelfFile = shelve.open("shelf\\tags")
-        shelfFile["is_interrupted"] = (False, -1, '')
+        shelfFile["is_interrupted"] = (False, -1, '', '')
         shelfFile["is_repeated"] = set()
     else:
         shelfFile = shelve.open("shelf\\tags")
@@ -29,14 +32,27 @@ def runall():
         run(tags[i], i, repeat_set)
 
     shelfFile = shelve.open("shelf\\tags")
-    shelfFile["is_interrupted"] = (False, -1, '')
+    shelfFile["is_interrupted"] = (False, -1, '', '')
     shelfFile["is_repeated"] = set()
     shelfFile.close()
 
 
+def regex_find(req_text):
+    regobj_question = re.compile(
+            r'{.*?frontendQuestionId.*?(\w+).*?titleSlug.*?([\w-]+).*?\"topicTags\".*?\[(.*?)\]\}',
+            re.S)
+    mo = regobj_question.findall(req_text)
+    tagreg = re.compile(r'\"name\".*?\"(.*?)\"}', re.S)
+    for i in range(len(mo)):
+        mo[i] = list(mo[i])
+        ele = mo[i]
+        mo[i][2] = tagreg.findall(ele[2])
+        mo[i] = tuple(mo[i])
+    return mo
+
+
 def run(this_week_tag, tag_number, repeat_set):
     regobj_editorial = re.compile(r'.*?canSeeDetail.*?(\w+).*', re.S)
-    regobj_question = re.compile(r'{.*?frontendQuestionId.*?(\w+).*?titleSlug.*?([\w-]+).*?}', re.S)
     base_url = "https://leetcode.com/graphql"
 
     data = {
@@ -51,6 +67,9 @@ def run(this_week_tag, tag_number, repeat_set):
             questions: data {
                 frontendQuestionId: questionFrontendId
                 titleSlug
+                topicTags {
+                    name
+                    }
                 }
             }
         }""",
@@ -58,16 +77,16 @@ def run(this_week_tag, tag_number, repeat_set):
     }
 
     req = requests.post(base_url, json=data)
-    mo = regobj_question.findall(req.text)
+    # print(req.text)
+    mo = regex_find(req.text)
     # print(mo)
-    question_dict = {}
     if __name__ != '__main__':
         if not (os.path.isfile(f"shelf\\{this_week_tag}.dat"
                                ) and os.path.isfile(f"shelf\\{this_week_tag}.bak"
                                                     ) and os.path.isfile(f"shelf\\{this_week_tag}.dir")):
             shelfFile = shelve.open(f"shelf\\{this_week_tag}")
             shelfFile[f"{this_week_tag[0]}"] = defaultdict(set)
-            shelfFile["is_interrupted"] = (False, 0, '')
+            shelfFile["is_interrupted"] = (False, 0, '', '')
         else:
             shelfFile = shelve.open(f"shelf\\{this_week_tag}")
     else:
@@ -76,7 +95,7 @@ def run(this_week_tag, tag_number, repeat_set):
                                                     ) and os.path.isfile(f"{this_week_tag}.dir")):
             shelfFile = shelve.open(f"{this_week_tag}")
             shelfFile[f"{this_week_tag[0]}"] = defaultdict(set)
-            shelfFile["is_interrupted"] = (False, 0, '')
+            shelfFile["is_interrupted"] = (False, 0, '', '')
         else:
             shelfFile = shelve.open(f"{this_week_tag}")
 
@@ -84,15 +103,13 @@ def run(this_week_tag, tag_number, repeat_set):
     is_interrupted = shelfFile["is_interrupted"]
 
     if is_interrupted[0]:
-        index = mo.index((is_interrupted[1], is_interrupted[2]))
+        index = mo.index((is_interrupted[1], is_interrupted[2], is_interrupted[3]))
         mo = mo[index:]
-    for key, val in mo[:]:
-        question_dict[int(key)] = val
-    for key, value in question_dict.items():
+    for key, value, topictags in mo[:]:
+        key = int(key)
         if key in repeat_set:
             continue
-        else:
-            repeat_set.add(key)
+        repeat_set.add(key)
         try:
             data = {
                 "query": """query editorialMeta($titleSlug: String!) {
@@ -114,22 +131,25 @@ def run(this_week_tag, tag_number, repeat_set):
                 else:
                     formatted += word.title() + ' '
 
-            print(key, formatted)
-            val_dict[key].add(ans)
-        except (KeyboardInterrupt, ConnectionError):
+            print(str(key).rjust(4), formatted.ljust(70), (", ".join(topictags)).ljust(50))
+            val_dict[key][0].add(ans)
+            val_dict[key][1] = topictags if val_dict[key][1] == [] else val_dict[key][1]
+        except (KeyboardInterrupt, ConnectionError, ConnectionResetError, ConnectionAbortedError,
+                Exception, requests.ConnectionError, requests.exceptions.Timeout):
+            # except (KeyboardInterrupt):
             print("\nKeyboardInterrupt...progress saved")
             if __name__ != '__main__':
                 shelfFile_tags = shelve.open("shelf\\tags")
-                shelfFile_tags["is_interrupted"] = (True, tag_number, this_week_tag)
+                shelfFile_tags["is_interrupted"] = (True, tag_number, this_week_tag, topictags)
                 shelfFile_tags["is_repeated"] = repeat_set
                 shelfFile_tags.close()
-
-            shelfFile["is_interrupted"] = (True, str(key), value)
+                # sys.exit(1)
+            shelfFile["is_interrupted"] = (True, str(key), value, topictags)
             shelfFile[f"{this_week_tag[0]}"] = val_dict
             shelfFile.close()
             sys.exit(1)
     # print(repeat_set)
-    shelfFile["is_interrupted"] = (False, -1, '')
+    shelfFile["is_interrupted"] = (False, -1, '', '')
     shelfFile[f"{this_week_tag[0]}"] = val_dict
     shelfFile.close()
 
@@ -137,5 +157,5 @@ def run(this_week_tag, tag_number, repeat_set):
 if __name__ == '__main__':
     tag = "array"
     run(tag, 0, set())
-    import compare
-    compare.comp(tag)
+    # import compare
+    # compare.comp(tag)

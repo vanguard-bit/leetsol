@@ -1,25 +1,24 @@
 import requests
 
 data = {
-
-    "query": """query questionEditorData($titleSlug: String!) {
-      question(titleSlug: $titleSlug) {
-      solution {
-      paidOnly
-      hasVideoSolution
-      canSeeDetail
-    }
-      }
-    }
-    """,
-    "variables": {"titleSlug": "two-sum"}
+    "query": """query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
+            problemsetQuestionList: questionList(
+            categorySlug: $categorySlug
+            limit: $limit
+            skip: $skip
+            filters: $filters
+      ){
+        total: totalNum
+        questions: data {
+            frontendQuestionId: questionFrontendId
+            titleSlug
+            topicTags {
+        name
+      }}
+        }
+    }""",
+    "variables": {"categorySlug": "", "skip": 0, "limit": -1, "filters": {"tags": "array"}}
 }
 
-Headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
-}
-req = requests.post("https://leetcode.com/graphql", json=data, headers=Headers)
-with open("wih.html", "w") as file:
-    file.write(req.text)
-import pprint
-pprint.pprint(req.text)
+req = requests.post("https://leetcode.com/graphql", json=data)
+print(req.text)

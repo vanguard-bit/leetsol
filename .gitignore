@@ -1,2 +1,3 @@
-*.txt
+results
+env
 __pycache__

@@ -1,4 +1,11 @@
 question = {
+    3322: {
+        'title_slug': 'premier-league-table-ranking-iii',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': True
+    },
     3308: {
         'title_slug': 'find-top-performing-driver',
         'hasEditorial': False,
@@ -20,6 +27,20 @@ question = {
         'difficulty': 'Medium',
         'isPaid': True
     },
+    3315: {
+        'title_slug': 'construct-the-minimum-bitwise-array-ii',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
+    },
+    3318: {
+        'title_slug': 'find-x-sum-of-all-k-long-subarrays-i',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Easy',
+        'isPaid': False
+    },
     3293: {
         'title_slug': 'calculate-product-final-price',
         'hasEditorial': False,
@@ -27,11 +48,39 @@ question = {
         'difficulty': 'Medium',
         'isPaid': True
     },
+    3326: {
+        'title_slug': 'minimum-division-operations-to-make-array-non-decreasing',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
+    },
     3300: {
         'title_slug': 'minimum-element-after-replacement-with-digit-sum',
         'hasEditorial': False,
         'editorial_slug': 'null',
         'difficulty': 'Easy',
+        'isPaid': False
+    },
+    3314: {
+        'title_slug': 'construct-the-minimum-bitwise-array-i',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Easy',
+        'isPaid': False
+    },
+    3317: {
+        'title_slug': 'find-the-number-of-possible-ways-for-an-event',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
+        'isPaid': False
+    },
+    3327: {
+        'title_slug': 'check-if-dfs-strings-are-palindromes',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
         'isPaid': False
     },
     3284: {
@@ -55,6 +104,13 @@ question = {
         'difficulty': 'Easy',
         'isPaid': False
     },
+    3321: {
+        'title_slug': 'find-x-sum-of-all-k-long-subarrays-ii',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
+        'isPaid': False
+    },
     3279: {
         'title_slug': 'maximum-total-area-occupied-by-pistons',
         'hasEditorial': False,
@@ -68,6 +124,13 @@ question = {
         'editorial_slug': 'null',
         'difficulty': 'Medium',
         'isPaid': True
+    },
+    3320: {
+        'title_slug': 'count-the-number-of-winning-sequences',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
+        'isPaid': False
     },
     3269: {
         'title_slug': 'constructing-two-increasing-arrays',
@@ -90,6 +153,13 @@ question = {
         'difficulty': 'Medium',
         'isPaid': False
     },
+    3312: {
+        'title_slug': 'sorted-gcd-pair-queries',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
+        'isPaid': False
+    },
     3285: {
         'title_slug': 'find-indices-of-stable-mountains',
         'hasEditorial': False,
@@ -106,6 +176,20 @@ question = {
     },
     3303: {
         'title_slug': 'find-the-occurrence-of-first-almost-equal-substring',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
+        'isPaid': False
+    },
+    3309: {
+        'title_slug': 'maximum-possible-number-by-binary-concatenation',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
+    },
+    3311: {
+        'title_slug': 'construct-2d-grid-matching-graph-layout',
         'hasEditorial': False,
         'editorial_slug': 'null',
         'difficulty': 'Hard',
@@ -181,6 +265,20 @@ question = {
         'difficulty': 'Easy',
         'isPaid': False
     },
+    3324: {
+        'title_slug': 'find-the-sequence-of-strings-appeared-on-the-screen',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
+    },
+    3323: {
+        'title_slug': 'minimize-connected-groups-by-inserting-interval',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': True
+    },
     3252: {
         'title_slug': 'premier-league-table-ranking-ii',
         'hasEditorial': False,
@@ -193,6 +291,13 @@ question = {
         'hasEditorial': False,
         'editorial_slug': 'null',
         'difficulty': 'Hard',
+        'isPaid': False
+    },
+    3310: {
+        'title_slug': 'remove-methods-from-project',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
         'isPaid': False
     },
     3283: {
@@ -545,6 +650,13 @@ question = {
         'difficulty': 'Medium',
         'isPaid': False
     },
+    3319: {
+        'title_slug': 'k-th-largest-perfect-subtree-size-in-binary-tree',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
+    },
     3226: {
         'title_slug': 'number-of-bit-changes-to-make-two-integers-equal',
         'hasEditorial': False,
@@ -587,6 +699,13 @@ question = {
         'difficulty': 'Hard',
         'isPaid': True
     },
+    3325: {
+        'title_slug': 'count-substrings-with-k-frequency-characters-i',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
+    },
     3217: {
         'title_slug': 'delete-nodes-from-linked-list-present-in-array',
         'hasEditorial': True,
@@ -607,6 +726,13 @@ question = {
         'editorial_slug': 'null',
         'difficulty': 'Medium',
         'isPaid': False
+    },
+    3313: {
+        'title_slug': 'find-the-last-marked-nodes-in-tree',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Hard',
+        'isPaid': True
     },
     3296: {
         'title_slug': 'minimum-number-of-seconds-to-make-mountain-height-zero',
@@ -670,6 +796,13 @@ question = {
         'editorial_slug': 'null',
         'difficulty': 'Medium',
         'isPaid': True
+    },
+    3316: {
+        'title_slug': 'find-maximum-removals-from-source-string',
+        'hasEditorial': False,
+        'editorial_slug': 'null',
+        'difficulty': 'Medium',
+        'isPaid': False
     },
     3249: {
         'title_slug': 'count-the-number-of-good-nodes',
@@ -2647,8 +2780,8 @@ question = {
     },
     2938: {
         'title_slug': 'separate-black-and-white-balls',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'separate-black-and-white-balls',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -4096,8 +4229,8 @@ question = {
     },
     2664: {
         'title_slug': 'the-knights-tour',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'the-knights-tour',
         'difficulty': 'Medium',
         'isPaid': True
     },
@@ -5321,8 +5454,8 @@ question = {
     },
     2583: {
         'title_slug': 'kth-largest-sum-in-a-binary-tree',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'kth-largest-sum-in-a-binary-tree',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -5531,8 +5664,8 @@ question = {
     },
     2530: {
         'title_slug': 'maximal-score-after-applying-k-operations',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'maximal-score-after-applying-k-operations',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -5951,8 +6084,8 @@ question = {
     },
     2463: {
         'title_slug': 'minimum-total-distance-traveled',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'minimum-total-distance-traveled',
         'difficulty': 'Hard',
         'isPaid': False
     },
@@ -6014,8 +6147,8 @@ question = {
     },
     2458: {
         'title_slug': 'height-of-binary-tree-after-subtree-removal-queries',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'height-of-binary-tree-after-subtree-removal-queries',
         'difficulty': 'Hard',
         'isPaid': False
     },
@@ -6406,8 +6539,8 @@ question = {
     },
     2406: {
         'title_slug': 'divide-intervals-into-minimum-number-of-groups',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'divide-intervals-into-minimum-number-of-groups',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -8597,8 +8730,8 @@ question = {
     },
     2044: {
         'title_slug': 'count-number-of-maximum-bitwise-or-subsets',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'count-number-of-maximum-bitwise-or-subsets',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -9409,8 +9542,8 @@ question = {
     },
     1942: {
         'title_slug': 'the-number-of-the-smallest-unoccupied-chair',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'the-number-of-the-smallest-unoccupied-chair',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -11313,8 +11446,8 @@ question = {
     },
     1671: {
         'title_slug': 'minimum-number-of-removals-to-make-mountain-array',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'minimum-number-of-removals-to-make-mountain-array',
         'difficulty': 'Hard',
         'isPaid': False
     },
@@ -11663,8 +11796,8 @@ question = {
     },
     1593: {
         'title_slug': 'split-a-string-into-the-max-number-of-unique-substrings',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'split-a-string-into-the-max-number-of-unique-substrings',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -11992,8 +12125,8 @@ question = {
     },
     1545: {
         'title_slug': 'find-kth-bit-in-nth-binary-string',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'find-kth-bit-in-nth-binary-string',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -13693,8 +13826,8 @@ question = {
     },
     1277: {
         'title_slug': 'count-square-submatrices-with-all-ones',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'count-square-submatrices-with-all-ones',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -14043,8 +14176,8 @@ question = {
     },
     1233: {
         'title_slug': 'remove-sub-folders-from-the-filesystem',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'remove-sub-folders-from-the-filesystem',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -14344,8 +14477,8 @@ question = {
     },
     1405: {
         'title_slug': 'longest-happy-string',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'longest-happy-string',
         'difficulty': 'Medium',
         'isPaid': False
     },
@@ -15072,8 +15205,8 @@ question = {
     },
     1106: {
         'title_slug': 'parsing-a-boolean-expression',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'parsing-a-boolean-expression',
         'difficulty': 'Hard',
         'isPaid': False
     },
@@ -18838,8 +18971,8 @@ question = {
     },
     632: {
         'title_slug': 'smallest-range-covering-elements-from-k-lists',
-        'hasEditorial': False,
-        'editorial_slug': 'null',
+        'hasEditorial': True,
+        'editorial_slug': 'smallest-range-covering-elements-from-k-lists',
         'difficulty': 'Hard',
         'isPaid': False
     },
